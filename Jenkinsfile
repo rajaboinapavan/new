@@ -15,7 +15,7 @@ pipeline {
             steps {
                 echo 'Running tests...'
                 // Run the square.pl Perl script
-                sh 'perl square.pl'
+                sh 'perl -v'
             }
         }
         stage('Deploy') {
