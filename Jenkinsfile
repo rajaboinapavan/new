@@ -5,19 +5,23 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the project...'
-                // Add your build steps here
+                // Add any build steps here
+                
+                // Copy square.pl script to workspace
+                sh 'cp square.pl $WORKSPACE/'
             }
         }
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                // Add your test steps here
+                // Run the square.pl Perl script
+                sh 'perl square.pl'
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying the project...'
-                // Add your deployment steps here
+                // Add any deployment steps here
             }
         }
     }
